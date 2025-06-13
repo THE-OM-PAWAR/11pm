@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -48,14 +49,54 @@ const Navbar = () => {
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-1 hover-trigger"
+          className="flex items-center gap-1 hover-trigger group"
           onClick={handleLinkClick}
         >
-          <span className="text-2xl font-bold tracking-tight">
-            <span className="text-white">11</span>
-            <br />
-            <span className="text-white">PM</span>
-          </span>
+          <motion.div 
+            className="relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
+          >
+            <motion.span 
+              className="block text-2xl font-bold tracking-tight leading-none"
+              style={{
+                fontFamily: 'var(--font-grotesk), Bebas Neue, Impact, Arial Narrow, Arial, sans-serif',
+                letterSpacing: '0.02em',
+              }}
+            >
+              <motion.span 
+                className="block text-white transition-all duration-500 group-hover:text-[#00ffff]"
+                initial={{ y: 0 }}
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
+              >
+                11
+              </motion.span>
+              <motion.span 
+                className="block text-white transition-all duration-500 group-hover:text-[#00ffff] -mt-1"
+                initial={{ y: 0 }}
+                whileHover={{ y: 2 }}
+                transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1], delay: 0.1 }}
+              >
+                PM
+              </motion.span>
+            </motion.span>
+            
+            {/* Animated underline */}
+            <motion.div
+              className="absolute bottom-0 left-0 h-[1px] bg-gradient-to-r from-[#00ffff] to-transparent"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
+            />
+            
+            {/* Glow effect on hover */}
+            <motion.div
+              className="absolute inset-0 bg-[#00ffff] opacity-0 blur-xl"
+              whileHover={{ opacity: 0.1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -74,9 +115,14 @@ const Navbar = () => {
         {/* CTA Button (Desktop) */}
         <div className="hidden md:block">
           <Link href="/contact">
-            <button className="bg-white text-black px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105">
+            <motion.button 
+              className="bg-white text-black px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
               Join Now
-            </button>
+            </motion.button>
           </Link>
         </div>
 
