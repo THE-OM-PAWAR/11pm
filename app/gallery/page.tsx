@@ -7,50 +7,50 @@ import { X } from 'lucide-react';
 // Gallery categories
 const categories = [
   'All',
-  'Facility',
-  'Equipment',
-  'Training',
+  'Gaming Stations',
+  'VR Zone',
+  'Tournament Area',
+  'Lounge',
 ];
 
 // Gallery data
 const galleryImages = [
   { 
-    id: 13,
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_b37a3d6f.jpg',
-    alt: 'Yuvi Gym Dr. Ambedkar Nagar - Modern Fitness Facility',
-    category: 'Facility',
+    id: 1,
+    src: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80',
+    alt: '11 PM Gaming Cafe - Premium Gaming Stations',
+    category: 'Gaming Stations',
   },
   {
-    id: 11,
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_7b74f63d.jpg',
-    alt: 'Yuvi Gym Mhow - Premium Gym Interior',
-    category: 'Facility',
+    id: 2,
+    src: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=600&q=80',
+    alt: 'VR Gaming Experience at 11 PM Gaming Cafe',
+    category: 'VR Zone',
   },
   {
-    id: 12,
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_43c8a413.jpg',
-    alt: 'Modern Gym Equipment at Yuvi Gym Dr. Ambedkar Nagar',
-    category: 'Equipment',
+    id: 3,
+    src: 'https://images.unsplash.com/photo-1542751110-97427bbecf23?auto=format&fit=crop&w=600&q=80',
+    alt: 'Esports Tournament Arena',
+    category: 'Tournament Area',
   },
   {
-    id: 14,
-    src: '/gallery/WhatsApp Image 2025-06-06 at 13.05.42_6251c2b5.jpg',
-    alt: 'Personal Training Area - Yuvi Gym Mhow',
-    category: 'Training',
+    id: 4,
+    src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80',
+    alt: 'Gaming Lounge & Snack Bar',
+    category: 'Lounge',
   },
   {
-    id: 15,
-    src: '/gallery/Screenshot 2025-06-08 163318.png',
-    alt: 'Modern Gym Equipment at Yuvi Gym Dr. Ambedkar Nagar',
-    category: 'Equipment',
+    id: 5,
+    src: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80',
+    alt: 'Comfortable Gaming Environment',
+    category: 'Gaming Stations',
   },
   {
-    id: 16,
-    src: '/gallery/image.png',
-    alt: 'Personal Training Area - Yuvi Gym Mhow',
-    category: 'Training',
+    id: 6,
+    src: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80',
+    alt: 'High-End Gaming Setup',
+    category: 'Gaming Stations',
   },
-  
 ];
 
 export default function GalleryPage() {
@@ -95,8 +95,8 @@ export default function GalleryPage() {
       <div className="relative py-20 mb-16">
         <div className="absolute inset-0 bg-black">
           <Image
-            src="/gallery/WhatsApp Image 2025-06-03 at 18.02.25_b37a3d6f.jpg"
-            alt="Yuvi Gym Dr. Ambedkar Nagar - Best Gym in Mhow"
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80"
+            alt="11 PM Gaming Cafe - Ultimate Gaming Experience"
             fill
             className="object-cover opacity-20 mix-blend-overlay"
           />
@@ -105,11 +105,11 @@ export default function GalleryPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-2xl">
             <h1 className="heading-lg mb-6">
-              Yuvi Gym <span className="text-gradient">Gallery</span> - Dr. Ambedkar Nagar
+              11 PM Gaming Cafe <span className="text-gradient">Gallery</span>
             </h1>
             <p className="text-gray-300 text-lg">
-              Explore our state-of-the-art fitness facility in Dr. Ambedkar Nagar, Mhow. View our modern equipment, 
-              training areas, and the premium environment that makes Yuvi Gym the best fitness center in the area.
+              Explore our cutting-edge gaming facility featuring high-end gaming PCs, immersive VR experiences, 
+              tournament areas, and comfortable gaming lounges that make 11 PM the ultimate gaming destination.
             </p>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function GalleryPage() {
                 
                 {/* Overlay content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm text-[rgb(var(--accent-green))] font-medium mb-1">{image.category}</p>
+                  <p className="text-sm text-[#00ffff] font-medium mb-1">{image.category}</p>
                   <h3 className="text-xl text-white font-semibold">{image.alt}</h3>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function GalleryPage() {
           onClick={closeLightbox}
         >
           <button 
-            className="absolute top-6 right-6 text-white hover:text-[rgb(var(--accent-green))] transition-colors hover-trigger"
+            className="absolute top-6 right-6 text-white hover:text-[#00ffff] transition-colors hover-trigger"
             onClick={closeLightbox}
           >
             <X className="w-8 h-8" />
@@ -209,7 +209,7 @@ export default function GalleryPage() {
                     className="object-contain w-full h-full"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-70">
-                    <p className="text-sm text-[rgb(var(--accent-green))]">{image.category}</p>
+                    <p className="text-sm text-[#00ffff]">{image.category}</p>
                     <h3 className="text-white text-lg font-medium">{image.alt}</h3>
                   </div>
                 </div>

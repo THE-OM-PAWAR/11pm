@@ -6,26 +6,25 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 import { X } from 'lucide-react';
 
 const galleryImages = [
-
   {
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_7b74f63d.jpg',
-    alt: 'Gym Interior',
-    category: 'Facility',
+    src: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80',
+    alt: 'Gaming Zone',
+    category: 'Gaming Stations',
   },
   {
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_43c8a413.jpg',
-    alt: 'Gym Equipment',
-    category: 'Equipment',
+    src: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=600&q=80',
+    alt: 'VR Experience',
+    category: 'VR Gaming',
   },
   {
-    src: '/gallery/WhatsApp Image 2025-06-03 at 18.02.25_b37a3d6f.jpg',
-    alt: 'Gym Space',
-    category: 'Facility',
+    src: 'https://images.unsplash.com/photo-1542751110-97427bbecf23?auto=format&fit=crop&w=600&q=80',
+    alt: 'Tournament Area',
+    category: 'Esports',
   },
   {
-    src: '/gallery/WhatsApp Image 2025-06-06 at 13.05.42_6251c2b5.jpg',
-    alt: 'Training Area',
-    category: 'Training',
+    src: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80',
+    alt: 'Gaming Lounge',
+    category: 'Lounge',
   },
 ];
 
@@ -54,7 +53,7 @@ const GallerySection = () => {
           
           <ScrollReveal threshold={0.1} delay={0.2}>
             <p className="text-gray-300">
-              Take a glimpse at our premium facilities and the inspiring atmosphere where transformations happen.
+              Take a glimpse at our premium gaming facilities and the electrifying atmosphere where gaming legends are born.
             </p>
           </ScrollReveal>
         </div>
@@ -82,7 +81,7 @@ const GallerySection = () => {
                 
                 {/* Overlay content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm text-[rgb(var(--accent-green))] font-medium mb-1">{image.category}</p>
+                  <p className="text-sm text-[#00ffff] font-medium mb-1">{image.category}</p>
                   <h3 className="text-xl text-white font-semibold">{image.alt}</h3>
                 </div>
               </div>
@@ -98,7 +97,7 @@ const GallerySection = () => {
           onClick={closeLightbox}
         >
           <button 
-            className="absolute top-6 right-6 text-white hover:text-[rgb(var(--accent-green))] transition-colors"
+            className="absolute top-6 right-6 text-white hover:text-[#00ffff] transition-colors"
             onClick={closeLightbox}
           >
             <X className="w-8 h-8" />

@@ -8,22 +8,22 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: 'Aditya Jat',
-    role: 'Member for 2 years',
-    quote: "I like the crowd of the gym all the person are very friendly and respectful . \n \nTrainer are also very good in nature ..",
+    name: 'Alex Chen',
+    role: 'Esports Player',
+    quote: "11 PM Gaming Cafe has the best setup I've ever experienced. The high-end PCs and low latency make all the difference in competitive gaming. This place is a game-changer!",
   },
   {
     id: 2,
-    name: 'Kratagya Agrawal',
-    role: 'Member for 6 months',
-    quote: "Understanding owner, good equipments for workout and flexible timings",
+    name: 'Sarah Johnson',
+    role: 'Casual Gamer',
+    quote: "The VR experience here is absolutely mind-blowing! The staff is super friendly and the atmosphere is perfect for both solo gaming and hanging out with friends.",
     image: '/testimonial/image.png',
   },
   {
     id: 3,
-    name: 'Golu Singh',
-    role: 'Member for 3 years',
-    quote: "Best gym at a cheap price in mhow \n Yuvi bhaiya ka bhi bhadya behaviour hain or bhadya trainner hain ✅💯💯💯 …",
+    name: 'Mike Rodriguez',
+    role: 'Tournament Winner',
+    quote: "I've won multiple tournaments here and the community is amazing. The equipment is top-notch and the 24/7 access means I can practice whenever I want. Highly recommend!",
     image: '/testimonial/unnamed.png',
   },
 ];
@@ -57,13 +57,13 @@ const TestimonialsSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-20 left-10 w-60 h-60 bg-[rgb(var(--accent-green))] rounded-full filter blur-[140px] opacity-10"></div>
-      <div className="absolute bottom-20 right-10 w-60 h-60 bg-[rgb(var(--accent-red))] rounded-full filter blur-[140px] opacity-10"></div>
+      <div className="absolute top-20 left-10 w-60 h-60 bg-[#00ffff] rounded-full filter blur-[140px] opacity-10"></div>
+      <div className="absolute bottom-20 right-10 w-60 h-60 bg-[#ff0080] rounded-full filter blur-[140px] opacity-10"></div>
       
       <div className="container-custom relative z-10">
         <ScrollReveal threshold={0.1}>
           <h2 className="heading-lg text-center mb-16">
-            What Our <span className="text-gradient">Members Say</span>
+            What Our <span className="text-gradient">Gamers Say</span>
           </h2>
         </ScrollReveal>
         
@@ -71,7 +71,7 @@ const TestimonialsSection = () => {
           {/* Testimonial Content */}
           <div className="glass-panel p-8 md:p-12 rounded-2xl">
             <ScrollReveal threshold={0.1} delay={0.2} className="mb-8">
-              <Quote className="h-16 w-16 text-[rgb(var(--accent-green))] opacity-20" />
+              <Quote className="h-16 w-16 text-[#00ffff] opacity-20" />
             </ScrollReveal>
             
             <div className="relative overflow-hidden">
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
                   key={index}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentIndex === index 
-                      ? 'bg-[rgb(var(--accent-green))]' 
+                      ? 'bg-[#00ffff]' 
                       : 'bg-gray-600'
                   }`}
                   onClick={() => setCurrentIndex(index)}

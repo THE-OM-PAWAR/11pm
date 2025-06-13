@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import { DumbbellIcon, Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Gamepad2, Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
                   whileHover={{ opacity: 0.3 }}
                   transition={{ duration: 0.3 }}
                 />
-                <DumbbellIcon className="h-8 w-8 text-[#00ffff] relative z-10 transition-all duration-300 group-hover:rotate-12" />
+                <Gamepad2 className="h-8 w-8 text-[#00ffff] relative z-10 transition-all duration-300 group-hover:rotate-12" />
               </motion.div>
               
               <motion.span 
@@ -53,11 +53,11 @@ const Footer = () => {
               </motion.span>
             </Link>
             <p className="text-gray-400 text-sm">
-              Fuel your strength with cutting-edge equipment, expert trainers, and a motivating atmosphere.
+              Level up your gaming experience with cutting-edge PCs, VR adventures, and an electrifying gaming community.
             </p>
             <div className="flex space-x-4">
               <motion.a 
-                href="https://www.instagram.com/yuvifitnessgym?igsh=MWNqZmphMnFudXR6eQ%3D%3D&utm_source=qr" 
+                href="https://www.instagram.com/11pmgaming" 
                 className="text-gray-400 hover:text-[#00ffff] transition-colors relative"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 transition={{ duration: 0.2 }}
@@ -82,8 +82,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-[#00ffff] transition-colors">
-                  About Us
+                <Link href="/gallery" className="text-gray-400 hover:text-[#00ffff] transition-colors">
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -111,7 +111,7 @@ const Footer = () => {
                   rel="noopener noreferrer" 
                   className="text-gray-400 hover:text-[#00ffff] transition-colors"
                 >
-                  989 A, Main Street, Dreamland Square, Dr. Ambedkar Nagar, Madhya Pradesh 453441
+                  989 A, Main Street, Dreamland Square, Gaming District, Tech City 453441
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -128,26 +128,26 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#00ffff]" />
-                <span className="text-gray-400">yuviipatidar@gmail.com</span>
+                <span className="text-gray-400">info@11pmgaming.com</span>
               </li>
             </ul>
           </div>
 
           {/* Opening Hours */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Opening Hours</h3>
+            <h3 className="text-white text-lg font-semibold mb-6">Gaming Hours</h3>
             <ul className="space-y-3">
               <li className="flex justify-between">
                 <span className="text-gray-400">Monday - Friday</span>
-                <span className="text-[#00ffff]">6:00 AM - 10:00 PM</span>
+                <span className="text-[#00ffff]">10:00 AM - 2:00 AM</span>
               </li>
               <li className="flex justify-between">
                 <span className="text-gray-400">Saturday</span>
-                <span className="text-[#00ffff]">7:00 AM - 8:00 PM</span>
+                <span className="text-[#00ffff]">10:00 AM - 3:00 AM</span>
               </li>
               <li className="flex justify-between">
                 <span className="text-gray-400">Sunday</span>
-                <span className="text-[#00ffff]">8:00 AM - 6:00 PM</span>
+                <span className="text-[#00ffff]">12:00 PM - 1:00 AM</span>
               </li>
             </ul>
           </div>
@@ -156,7 +156,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-10 mt-10 border-t border-gray-800 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} 11 PM. All rights reserved.
+            © {new Date().getFullYear()} 11 PM Gaming Cafe. All rights reserved.
           </p>
         </div>
       </div>

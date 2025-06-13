@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Info, Check, Phone } from 'lucide-react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+
 interface PricingPlan {
   duration: string;
   price: number;
@@ -12,105 +13,106 @@ interface PricingPlan {
 }
 
 interface PricingPlans {
-  basic: PricingPlan[];
-  premium: PricingPlan[];
+  hourly: PricingPlan[];
+  packages: PricingPlan[];
 }
 
 // Pricing data
 const pricingPlans: PricingPlans = {
-  basic: [
+  hourly: [
     {
-      duration: '1 Month',
-      price: 1200,
+      duration: '1 Hour',
+      price: 50,
       features: [
-        'Access to all gym equipment',
-        'CrossFit training',
-        'Basic fitness assessment',
-        'Locker room access',
+        'High-end gaming PC access',
+        'All popular games included',
+        'Comfortable gaming chair',
+        'High-speed internet',
       ],
     },
     {
-      duration: '3 Months',
-      price: 3000,
+      duration: '3 Hours',
+      price: 120,
       features: [
-        'Access to all gym equipment',
-        'CrossFit training',
-        'Basic fitness assessment',
-        'Locker room access',
-        'Progress tracking',
+        'High-end gaming PC access',
+        'All popular games included',
+        'Comfortable gaming chair',
+        'High-speed internet',
+        'Free snacks',
       ],
     },
     {
-      duration: '6 Months',
-      price: 4500,
+      duration: '6 Hours',
+      price: 200,
       features: [
-        'Access to all gym equipment',
-        'CrossFit training',
-        'Basic fitness assessment',
-        'Locker room access',
-        'Progress tracking',
-        'Nutrition consultation',
+        'High-end gaming PC access',
+        'All popular games included',
+        'Comfortable gaming chair',
+        'High-speed internet',
+        'Free snacks & drinks',
+        'VR gaming session (30 min)',
       ],
     },
     {
-      duration: '12 Months',
-      price: 6500,
+      duration: '12 Hours',
+      price: 350,
       features: [
-        'Access to all gym equipment',
-        'CrossFit training',
-        'Basic fitness assessment',
-        'Locker room access',
-        'Progress tracking',
-        'Nutrition consultation',
-        'Priority booking',
+        'High-end gaming PC access',
+        'All popular games included',
+        'Comfortable gaming chair',
+        'High-speed internet',
+        'Unlimited snacks & drinks',
+        'VR gaming session (1 hour)',
+        'Tournament participation',
       ],
     },
   ],
-  premium: [
+  packages: [
     {
-      duration: '1 Month',
-      price: 1500,
+      duration: 'VIP Gaming',
+      price: 150,
       features: [
-        'All Basic features',
-        'Cardio zone access',
-        'Group cardio classes',
-        'Personal trainer consultation',
+        'Premium gaming station',
+        'Priority booking',
+        'VR gaming access',
+        'Tournament participation',
+        'Unlimited refreshments',
       ],
     },
     {
-      duration: '3 Months',
-      price: 3600,
+      duration: 'Party Package',
+      price: 500,
       features: [
-        'All Basic features',
-        'Cardio zone access',
-        'Group cardio classes',
-        'Personal trainer consultation',
-        'Custom workout plans',
+        'Group gaming area (5 PCs)',
+        'Private tournament setup',
+        'Dedicated gaming host',
+        'Food & beverage service',
+        'Custom gaming experience',
       ],
     },
     {
-      duration: '6 Months',
-      price: 5200,
+      duration: 'Monthly Pass',
+      price: 2000,
       features: [
-        'All Basic features',
-        'Cardio zone access',
-        'Group cardio classes',
-        'Personal trainer consultation',
-        'Custom workout plans',
-        'Recovery sessions',
+        'Unlimited gaming access',
+        'VR gaming included',
+        'Tournament participation',
+        'Priority booking',
+        'Member exclusive events',
+        'Discounted food & drinks',
       ],
     },
     {
-      duration: '12 Months',
-      price: 7200,
+      duration: 'Annual Pass',
+      price: 15000,
       features: [
-        'All Basic features',
-        'Cardio zone access',
-        'Group cardio classes',
-        'Personal trainer consultation',
-        'Custom workout plans',
-        'Recovery sessions',
-        'VIP locker access',
+        'Unlimited gaming access',
+        'VR gaming included',
+        'Tournament participation',
+        'Priority booking',
+        'Member exclusive events',
+        'Free food & drinks',
+        'Personal gaming locker',
       ],
     },
   ],
@@ -118,16 +120,16 @@ const pricingPlans: PricingPlans = {
 
 // Additional notes
 const additionalNotes = [
-  'One-time registration fee: ₹200 (applicable only on monthly package)',
-  '100% transformation on personal training by certified trainers',
-  '₹500 extra charge for payments made in 2 installments',
-  'All payments should be made in one shot',
-  '2nd installment must be paid within 20 days, else package will be discontinued',
-  'Authentic Supplements Available',
+  'All gaming sessions include access to latest games and software',
+  'VR experiences available with advance booking',
+  'Tournament entry fees may apply for special events',
+  'Group discounts available for 5+ people',
+  'Birthday party packages with special rates',
+  'Gaming peripherals and accessories available for purchase',
 ];
 
 export default function PricingPage() {
-  const [activeTab, setActiveTab] = useState<'basic' | 'premium'>('basic');
+  const [activeTab, setActiveTab] = useState<'hourly' | 'packages'>('hourly');
 
   return (
     <div className="pt-24 pb-16">
@@ -135,8 +137,8 @@ export default function PricingPage() {
       <div className="relative py-20 mb-16">
         <div className="absolute inset-0 bg-black">
           <Image
-            src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg"
-            alt="Gym interior"
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80"
+            alt="Gaming setup"
             fill
             className="object-cover opacity-20 mix-blend-overlay"
           />
@@ -145,12 +147,12 @@ export default function PricingPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <h1 className="heading-lg mb-6">
-              Best Gym Membership <span className="text-gradient">Plans</span> in Dr. Ambedkar Nagar
+              Gaming <span className="text-gradient">Packages</span> & Pricing
             </h1>
             <p className="text-gray-300 text-lg">
-              Discover affordable fitness solutions at Yuvi Gym, the best gym in Dr. Ambedkar Nagar, Mhow. 
-              Our competitive membership plans are designed to help you achieve your fitness goals with 
-              state-of-the-art equipment and expert guidance.
+              Discover affordable gaming solutions at 11 PM Gaming Cafe. Our flexible pricing options are designed 
+              to accommodate casual gamers, hardcore enthusiasts, and competitive esports players with premium 
+              gaming experiences and cutting-edge technology.
             </p>
           </div>
         </div>
@@ -160,24 +162,24 @@ export default function PricingPage() {
       <div className="container-custom mb-12">
         <div className="flex justify-center gap-4 mb-12">
           <button
-            onClick={() => setActiveTab('basic')}
+            onClick={() => setActiveTab('hourly')}
             className={`px-8 py-3 rounded-full transition-all duration-300 ${
-              activeTab === 'basic'
+              activeTab === 'hourly'
                 ? 'bg-white text-black'
                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >
-            🏋️ Basic Fitness Package
+            🎮 Hourly Gaming
           </button>
           <button
-            onClick={() => setActiveTab('premium')}
+            onClick={() => setActiveTab('packages')}
             className={`px-8 py-3 rounded-full transition-all duration-300 ${
-              activeTab === 'premium'
+              activeTab === 'packages'
                 ? 'bg-white text-black'
                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >
-            🏋️‍♂️ Premium Fitness Package
+            🏆 Special Packages
           </button>
         </div>
 
@@ -205,7 +207,7 @@ export default function PricingPage() {
                 <div className="p-6 pt-0">
                   <Link href="/contact">
                     <button className="w-full py-3 rounded-md bg-white text-black font-medium transition-all duration-300 hover:bg-opacity-90 flex items-center justify-center gap-2">
-                      Get Started
+                      Book Now
                       <ArrowRight className="h-4 w-4" />
                     </button>
                   </Link>
@@ -221,7 +223,7 @@ export default function PricingPage() {
         <div className="glass-panel rounded-xl p-8">
           <div className="flex items-start gap-4 mb-6">
             <Info className="h-6 w-6 text-white mt-1 flex-shrink-0" />
-            <h2 className="text-2xl font-semibold mb-6">Why Choose Yuvi Gym in Dr. Ambedkar Nagar?</h2>
+            <h2 className="text-2xl font-semibold mb-6">Why Choose 11 PM Gaming Cafe?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -233,23 +235,23 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <h3 className="text-2xl font-bold mb-2">Monthly Fitness Plan</h3>
-          <p className="text-gray-400 text-sm mb-6">Perfect for beginners and fitness enthusiasts in Dr. Ambedkar Nagar</p>
-          <h3 className="text-2xl font-bold mb-2">Yearly Fitness Package</h3>
-          <p className="text-gray-400 text-sm mb-6">Best value for dedicated fitness enthusiasts in Mhow</p>
+          <h3 className="text-2xl font-bold mb-2 mt-8">Hourly Gaming Sessions</h3>
+          <p className="text-gray-400 text-sm mb-6">Perfect for casual gaming and trying out new games</p>
+          <h3 className="text-2xl font-bold mb-2">Premium Gaming Packages</h3>
+          <p className="text-gray-400 text-sm mb-6">Best value for serious gamers and esports enthusiasts</p>
 
           <p className="text-gray-300 mb-8">
-            As the leading fitness center in Dr. Ambedkar Nagar, Mhow, Yuvi Gym offers unmatched value with our 
-            comprehensive membership plans. Our state-of-the-art facility features modern equipment, certified 
-            trainers, and 24/7 access, making us the preferred choice for fitness enthusiasts in the area. 
-            Join the best gym in Dr. Ambedkar Nagar and start your fitness journey today.
+            As the premier gaming destination, 11 PM Gaming Cafe offers unmatched value with our 
+            comprehensive gaming packages. Our state-of-the-art facility features the latest gaming hardware, 
+            immersive VR experiences, and a vibrant gaming community. Join the ultimate gaming experience 
+            and level up your skills with us.
           </p>
 
           {/* Contact Section */}
           <div className="mt-8 pt-8 border-t border-gray-800">
             <div className="flex items-center gap-3">
               <Phone className="h-5 w-5 text-white" />
-              <span className="text-gray-300">Contact: Yuvraj Patidar – 9869698087</span>
+              <span className="text-gray-300">Contact: Gaming Manager – 08966968087</span>
             </div>
           </div>
         </div>

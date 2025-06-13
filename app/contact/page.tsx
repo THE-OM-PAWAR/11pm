@@ -10,17 +10,17 @@ export default function ContactPage() {
       {/* Hero Section */}
       <div className="relative py-20 mb-16">
         <div className="absolute inset-0 bg-black">
-          <div className="absolute inset-0 bg-[rgb(var(--accent-red))] opacity-10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-[#00ffff] opacity-10 mix-blend-overlay"></div>
         </div>
         <div className="container-custom relative z-10">
           <div className="max-w-2xl">
             <h1 className="heading-lg mb-6">
-              Visit <span className="text-gradient">Yuvi Gym</span> - Best Gym in Dr. Ambedkar Nagar
+              Visit <span className="text-gradient">11 PM Gaming Cafe</span> - Ultimate Gaming Destination
             </h1>
             <p className="text-gray-300 text-lg">
-              Ready to start your fitness journey? Visit Yuvi Gym, the leading fitness center in Dr. Ambedkar Nagar, Mhow. 
-              Our expert trainers are here to help you achieve your fitness goals. Contact us today for membership 
-              inquiries, personal training, or to schedule a tour of our state-of-the-art facility.
+              Ready to level up your gaming experience? Visit 11 PM Gaming Cafe, the premier gaming destination 
+              featuring high-end gaming PCs, VR experiences, and competitive tournaments. Contact us today for 
+              bookings, tournament information, or to schedule a tour of our state-of-the-art gaming facility.
             </p>
           </div>
         </div>
@@ -35,8 +35,8 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 <div className="text-center py-8">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[rgba(var(--accent-green),0.2)] flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10 text-[rgb(var(--accent-green))]">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[rgba(0,255,255,0.2)] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10 text-[#00ffff]">
                       <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
                       <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
                       <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
@@ -46,12 +46,12 @@ export default function ContactPage() {
                   
                   <h3 className="text-xl font-medium mb-4">Direct WhatsApp Support</h3>
                   <p className="text-gray-300 mb-8 max-w-md mx-auto">
-                    Get instant responses about our gym membership plans, personal training programs, or facility tours. 
-                    Our team at Yuvi Gym, Dr. Ambedkar Nagar is ready to assist you with all your fitness needs.
+                    Get instant responses about our gaming packages, tournament schedules, VR bookings, or facility tours. 
+                    Our team at 11 PM Gaming Cafe is ready to help you with all your gaming needs.
                   </p>
                   
                   <a 
-                    href={`https://wa.me/918966968087?text=Hi,%20I'm%20interested%20in%20learning%20more%20about%20Yuvi%20Gym.`}
+                    href={`https://wa.me/918966968087?text=Hi,%20I'm%20interested%20in%20learning%20more%20about%2011%20PM%20Gaming%20Cafe.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center gap-2 hover-trigger px-8 py-4"
@@ -64,7 +64,7 @@ export default function ContactPage() {
                   </a>
                   
                   <p className="text-sm text-gray-400 mt-6">
-                    Our typical response time is under 30 minutes during working hours
+                    Our typical response time is under 30 minutes during operating hours
                   </p>
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-[rgb(var(--accent-green))] mt-1" />
+                    <MapPin className="h-6 w-6 text-[#00ffff] mt-1" />
                     <div>
                       <h3 className="font-medium mb-1">Location</h3>
                       <p className="text-gray-300">
@@ -87,57 +87,57 @@ export default function ContactPage() {
                           href="https://maps.app.goo.gl/gHm5tGpYoSLEsXDa8" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="hover:text-[rgb(var(--accent-green))] transition-colors"
+                          className="hover:text-[#00ffff] transition-colors"
                         >
-                          Yuvi Gym, 989 A, Main Street, Dreamland Square, Dr. Ambedkar Nagar, Mhow, Madhya Pradesh 453441
+                          11 PM Gaming Cafe, 989 A, Main Street, Dreamland Square, Gaming District, Tech City 453441
                         </a>
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-[rgb(var(--accent-green))] mt-1" />
+                    <Phone className="h-6 w-6 text-[#00ffff] mt-1" />
                     <div>
                       <h3 className="font-medium mb-1">Phone & WhatsApp</h3>
                       <p className="text-gray-300">
                         <a 
                           href="tel:08966968087"
-                          className="hover:text-[rgb(var(--accent-green))] transition-colors"
+                          className="hover:text-[#00ffff] transition-colors"
                           onClick={(e) => {
                             navigator.clipboard.writeText("08966968087");
                             e.preventDefault();
                             alert("Phone number copied to clipboard!");
                           }}
                         >
-                          Yuvraj Patidar – 08966968087
+                          Gaming Manager – 08966968087
                         </a>
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <Mail className="h-6 w-6 text-[rgb(var(--accent-green))] mt-1" />
+                    <Mail className="h-6 w-6 text-[#00ffff] mt-1" />
                     <div>
                       <h3 className="font-medium mb-1">Email</h3>
                       <p className="text-gray-300">
                         <a 
-                          href="mailto:Yuviipatidar@gmail.com"
-                          className="hover:text-[rgb(var(--accent-green))] transition-colors"
+                          href="mailto:info@11pmgaming.com"
+                          className="hover:text-[#00ffff] transition-colors"
                         >
-                          Yuviipatidar@gmail.com
+                          info@11pmgaming.com
                         </a>
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <Clock className="h-6 w-6 text-[rgb(var(--accent-green))] mt-1" />
+                    <Clock className="h-6 w-6 text-[#00ffff] mt-1" />
                     <div>
-                      <h3 className="font-medium mb-1">Working Hours</h3>
-                      <p className="text-gray-300">Monday - Friday: 6:00 AM - 10:00 PM</p>
-                      <p className="text-gray-300">Saturday: 7:00 AM - 8:00 PM</p>
-                      <p className="text-gray-300">Sunday: 8:00 AM - 6:00 PM</p>
-                      <p className="text-gray-300 mt-2">Best Gym in Dr. Ambedkar Nagar - Open 7 Days a Week</p>
+                      <h3 className="font-medium mb-1">Operating Hours</h3>
+                      <p className="text-gray-300">Monday - Friday: 10:00 AM - 2:00 AM</p>
+                      <p className="text-gray-300">Saturday: 10:00 AM - 3:00 AM</p>
+                      <p className="text-gray-300">Sunday: 12:00 PM - 1:00 AM</p>
+                      <p className="text-gray-300 mt-2">Ultimate Gaming Experience - Open Late Every Day</p>
                     </div>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden h-80">
                 {/* Google Map Embed */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.6182051894184!2d75.76031619999999!3d22.555970499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f9309566bff5%3A0xe0ffafa00f2a4ec3!2sYuvi%20fitness%20gym!5e0!3m2!1sen!2sin!4v1749198963871!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.6182051894184!2d75.76031619999999!3d22.555970499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f9309566bff5%3A0xe0ffafa00f2a4ec3!2s11%20PM%20Gaming%20Cafe!5e0!3m2!1sen!2sin!4v1749198963871!5m2!1sen!2sin" 
                   width={"100%"}
                   height={"100%"}
                   style={{ border: 0 }}

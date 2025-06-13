@@ -41,41 +41,41 @@ const itemVariants = {
 };
 
 export const metadata: Metadata = {
-  title: 'Yuvi Gym Mhow | Best Gym in Dr. Ambedkar Nagar',
-  description: 'Yuvi Gym in Dr. Ambedkar Nagar, Mhow - Your premier fitness destination for bodybuilding, strength training, and complete body transformation. Expert trainers, personalized plans, and state-of-the-art equipment.',
-  keywords: 'Gym near me, best gym in mhow, affordable in mhow, Yuvi Gym, Yuvi Gym Mhow, Best gym in Dr. Ambedkar Nagar, Gym in Mhow Madhya Pradesh, Bodybuilding and fitness center Mhow, Strength training gym Mhow, Personal training in Mhow, Weight loss gym Dr. Ambedkar Nagar, Certified gym trainer Mhow, Modern gym equipment Mhow, Muscle building program Mhow, Top fitness center near me, Affordable gym membership Mhow, Gyms in Dr. Ambedkar Nagar, Air-conditioned gym Mhow, Complete body transformation Mhow, Expert fitness trainers Mhow, Professional gym coaching Mhow, Fitness classes Mhow, Cardio training Mhow, CrossFit gym Mhow, 24/7 gym access Mhow, Group fitness sessions Mhow, Nutrition guidance Mhow, Sports training Mhow, Women\'s fitness center Mhow',
-  authors: [{ name: 'Yuvi Gym' }],
-  creator: 'Yuvi Gym',
-  publisher: 'Yuvi Gym',
+  title: '11 PM Gaming Cafe | Premium Gaming Lounge & Esports Center',
+  description: '11 PM Gaming Cafe - Your ultimate gaming destination featuring high-end gaming PCs, VR experiences, tournaments, and 24/7 gaming sessions. The best gaming cafe for esports enthusiasts.',
+  keywords: 'Gaming cafe near me, best gaming lounge, 11 PM Gaming Cafe, gaming center, esports cafe, high-end gaming PCs, VR gaming experience, gaming tournaments, 24/7 gaming, competitive gaming, gaming community, PC gaming cafe, console gaming, gaming events, esports training, gaming equipment rental, gaming party venue, LAN gaming, multiplayer gaming, gaming cafe with food, premium gaming experience',
+  authors: [{ name: '11 PM Gaming Cafe' }],
+  creator: '11 PM Gaming Cafe',
+  publisher: '11 PM Gaming Cafe',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://yuvigym.com'),
+  metadataBase: new URL('https://11pmgaming.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Yuvi Gym Mhow | Best Gym in Dr. Ambedkar Nagar',
-    description: 'Yuvi Gym in Dr. Ambedkar Nagar, Mhow - Your premier fitness destination for bodybuilding, strength training, and complete body transformation.',
-    url: 'https://yuvigym.com',
-    siteName: 'Yuvi Gym',
-    locale: 'en_IN',
+    title: '11 PM Gaming Cafe | Premium Gaming Lounge & Esports Center',
+    description: '11 PM Gaming Cafe - Your ultimate gaming destination featuring high-end gaming PCs, VR experiences, tournaments, and 24/7 gaming sessions.',
+    url: 'https://11pmgaming.com',
+    siteName: '11 PM Gaming Cafe',
+    locale: 'en_US',
     type: 'website',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Yuvi Gym - Best Gym in Dr. Ambedkar Nagar, Mhow',
+        alt: '11 PM Gaming Cafe - Premium Gaming Lounge',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yuvi Gym Mhow | Best Gym in Dr. Ambedkar Nagar',
-    description: 'Yuvi Gym in Dr. Ambedkar Nagar, Mhow - Your premier fitness destination for bodybuilding, strength training, and complete body transformation.',
+    title: '11 PM Gaming Cafe | Premium Gaming Lounge & Esports Center',
+    description: '11 PM Gaming Cafe - Your ultimate gaming destination featuring high-end gaming PCs, VR experiences, tournaments, and 24/7 gaming sessions.',
     images: ['/og-image.jpg'],
   },
   robots: {
