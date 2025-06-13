@@ -16,7 +16,6 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <GallerySection />
-      <TrainersPreview />
       <TestimonialsSection />
       <PricingPreview />
       <CtaSection />
