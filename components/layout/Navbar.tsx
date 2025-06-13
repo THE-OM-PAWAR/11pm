@@ -46,10 +46,10 @@ const Navbar = () => {
       )}
     >
       <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
+        {/* Enhanced Animated Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-1 hover-trigger group"
+          className="flex items-center gap-1 hover-trigger group relative"
           onClick={handleLinkClick}
         >
           <motion.div 
@@ -57,44 +57,212 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
           >
+            {/* Animated Background Glow */}
+            <motion.div
+              className="absolute inset-0 bg-[#00ffff] opacity-0 blur-xl rounded-full"
+              animate={{ 
+                opacity: [0, 0.3, 0],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            {/* Rotating Ring */}
+            <motion.div
+              className="absolute inset-0 w-16 h-16 -translate-x-2 -translate-y-2"
+              animate={{ rotate: 360 }}
+              transition={{ 
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              <svg viewBox="0 0 64 64" className="w-full h-full opacity-20">
+                <circle 
+                  cx="32" 
+                  cy="32" 
+                  r="28" 
+                  fill="none" 
+                  stroke="#00ffff" 
+                  strokeWidth="1"
+                  strokeDasharray="4 4"
+                />
+              </svg>
+            </motion.div>
+
+            {/* Pulsing Dots */}
+            <motion.div
+              className="absolute -top-1 -right-1 w-2 h-2 bg-[#00ffff] rounded-full"
+              animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-white rounded-full"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{ 
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+            
+            {/* Main Logo Text with Enhanced Animation */}
             <motion.span 
-              className="block text-2xl font-bold tracking-tight leading-none"
+              className="block text-2xl font-bold tracking-tight leading-none relative z-10"
               style={{
                 fontFamily: 'var(--font-grotesk), Bebas Neue, Impact, Arial Narrow, Arial, sans-serif',
                 letterSpacing: '0.02em',
               }}
             >
+              {/* "11" with floating animation */}
               <motion.span 
-                className="block text-white transition-all duration-500 group-hover:text-[#00ffff]"
-                initial={{ y: 0 }}
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
+                className="block text-white transition-all duration-500 group-hover:text-[#00ffff] relative"
+                animate={{ 
+                  y: [0, -2, 0],
+                }}
+                transition={{ 
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                whileHover={{ 
+                  y: -4,
+                  textShadow: "0 0 20px rgba(0, 255, 255, 0.5)"
+                }}
               >
                 11
+                {/* Glitch effect overlay */}
+                <motion.span
+                  className="absolute inset-0 text-[#00ffff] opacity-0"
+                  animate={{ 
+                    opacity: [0, 0.3, 0],
+                    x: [0, 1, -1, 0],
+                  }}
+                  transition={{ 
+                    duration: 0.1,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    ease: "linear"
+                  }}
+                >
+                  11
+                </motion.span>
               </motion.span>
+              
+              {/* "PM" with counter-floating animation */}
               <motion.span 
-                className="block text-white transition-all duration-500 group-hover:text-[#00ffff] -mt-1"
-                initial={{ y: 0 }}
-                whileHover={{ y: 2 }}
-                transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1], delay: 0.1 }}
+                className="block text-white transition-all duration-500 group-hover:text-[#00ffff] -mt-1 relative"
+                animate={{ 
+                  y: [0, 2, 0],
+                }}
+                transition={{ 
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+                whileHover={{ 
+                  y: 4,
+                  textShadow: "0 0 20px rgba(0, 255, 255, 0.5)"
+                }}
               >
                 PM
+                {/* Glitch effect overlay */}
+                <motion.span
+                  className="absolute inset-0 text-[#00ffff] opacity-0"
+                  animate={{ 
+                    opacity: [0, 0.3, 0],
+                    x: [0, -1, 1, 0],
+                  }}
+                  transition={{ 
+                    duration: 0.1,
+                    repeat: Infinity,
+                    repeatDelay: 4,
+                    ease: "linear",
+                    delay: 0.05
+                  }}
+                >
+                  PM
+                </motion.span>
               </motion.span>
             </motion.span>
             
-            {/* Animated underline */}
+            {/* Animated underline with wave effect */}
             <motion.div
-              className="absolute bottom-0 left-0 h-[1px] bg-gradient-to-r from-[#00ffff] to-transparent"
-              initial={{ width: 0 }}
-              whileHover={{ width: '100%' }}
-              transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
+              className="absolute bottom-0 left-0 h-[1px] bg-gradient-to-r from-[#00ffff] via-white to-[#00ffff]"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ 
+                width: ["0%", "100%", "0%"],
+                opacity: [0, 1, 0],
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+              whileHover={{ 
+                width: "100%",
+                opacity: 1,
+                transition: { duration: 0.4 }
+              }}
             />
             
-            {/* Glow effect on hover */}
+            {/* Scanning line effect */}
             <motion.div
-              className="absolute inset-0 bg-[#00ffff] opacity-0 blur-xl"
-              whileHover={{ opacity: 0.1 }}
-              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00ffff]/20 to-transparent"
+              animate={{ 
+                x: ["-100%", "100%"],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear",
+                repeatDelay: 3
+              }}
+            />
+            
+            {/* Corner brackets animation */}
+            <motion.div
+              className="absolute -top-1 -left-1 w-3 h-3 border-l-2 border-t-2 border-[#00ffff] opacity-0"
+              animate={{ 
+                opacity: [0, 1, 0],
+                scale: [0.8, 1, 0.8],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-1 -right-1 w-3 h-3 border-r-2 border-b-2 border-[#00ffff] opacity-0"
+              animate={{ 
+                opacity: [0, 1, 0],
+                scale: [0.8, 1, 0.8],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5
+              }}
             />
           </motion.div>
         </Link>

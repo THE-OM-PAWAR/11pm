@@ -1,164 +1,263 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import { Gamepad2, Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Gamepad2, Instagram, Linkedin, Globe, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-black border-t border-gray-800">
-      <div className="container-custom pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Info */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2 group">
-              <motion.div 
-                className="relative"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-[#00ffff] opacity-0 blur-lg"
-                  whileHover={{ opacity: 0.3 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <Gamepad2 className="h-8 w-8 text-[#00ffff] relative z-10 transition-all duration-300 group-hover:rotate-12" />
-              </motion.div>
-              
-              <motion.span 
-                className="text-xl font-bold tracking-tight"
+    <footer className="bg-gray-100 text-black relative overflow-hidden">
+      {/* Main Footer Content */}
+      <div className="container-custom py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left Side - Bold Statement */}
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.4, 0.0, 0.2, 1] }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <motion.h2 
+                className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight tracking-tight mb-6"
                 style={{
-                  fontFamily: 'var(--font-grotesk), Bebas Neue, Impact, Arial Narrow, Arial, sans-serif',
-                  letterSpacing: '0.02em',
+                  fontFamily: 'var(--font-grotesk), Impact, Arial Black, sans-serif',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 0.9,
                 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
               >
-                <motion.span 
-                  className="text-white transition-colors duration-300 group-hover:text-[#00ffff]"
-                  initial={{ y: 0 }}
-                  whileHover={{ y: -1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  11 
-                </motion.span>
-                <motion.span 
-                  className="text-[#00ffff] transition-colors duration-300 group-hover:text-white"
-                  initial={{ y: 0 }}
-                  whileHover={{ y: 1 }}
-                  transition={{ duration: 0.2, delay: 0.05 }}
-                >
-                  PM
-                </motion.span>
-              </motion.span>
-            </Link>
-            <p className="text-gray-400 text-sm">
-              Level up your gaming experience with cutting-edge PCs, VR adventures, and an electrifying gaming community.
-            </p>
-            <div className="flex space-x-4">
-              <motion.a 
-                href="https://www.instagram.com/11pmgaming" 
-                className="text-gray-400 hover:text-[#00ffff] transition-colors relative"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                transition={{ duration: 0.2 }}
+                READY TO LEVEL UP?<br />
+                <span className="text-gray-800">LET'S GAME TOGETHER!</span>
+              </motion.h2>
+              
+              <motion.p 
+                className="text-gray-600 text-lg max-w-md"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-[#00ffff] opacity-0 blur-md"
-                  whileHover={{ opacity: 0.2 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <Instagram size={20} className="relative z-10" />
-              </motion.a>
+                Join the ultimate gaming experience at 11 PM Gaming Cafe. 
+                High-end PCs, VR adventures, and an electrifying community await.
+              </motion.p>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-400 hover:text-[#00ffff] transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="text-gray-400 hover:text-[#00ffff] transition-colors">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-gray-400 hover:text-[#00ffff] transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-[#00ffff] transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-[#00ffff] mt-1" />
-                <a 
-                  href="https://maps.app.goo.gl/gHm5tGpYoSLEsXDa8" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-[#00ffff] transition-colors"
-                >
-                  989 A, Main Street, Dreamland Square, Gaming District, Tech City 453441
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-[#00ffff]" />
-                <span 
-                  className="text-gray-400 cursor-pointer hover:text-[#00ffff] transition-colors"
-                  onClick={() => {
-                    navigator.clipboard.writeText('08966968087');
+            {/* Contact Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Link href="/contact">
+                <motion.button 
+                  className="bg-black text-white px-8 py-4 text-lg font-bold uppercase tracking-wider hover:bg-gray-800 hover:text-white transition-all duration-300 relative overflow-hidden group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    fontFamily: 'var(--font-grotesk), Impact, Arial Black, sans-serif',
+                    letterSpacing: '0.1em',
                   }}
-                  title="Click to copy"
                 >
-                  08966968087
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-[#00ffff]" />
-                <span className="text-gray-400">info@11pmgaming.com</span>
-              </li>
-            </ul>
-          </div>
+                  <span className="relative z-10">BOOK NOW</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gray-800"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              </Link>
+            </motion.div>
+          </motion.div>
 
-          {/* Opening Hours */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Gaming Hours</h3>
-            <ul className="space-y-3">
-              <li className="flex justify-between">
-                <span className="text-gray-400">Monday - Friday</span>
-                <span className="text-[#00ffff]">10:00 AM - 2:00 AM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-gray-400">Saturday</span>
-                <span className="text-[#00ffff]">10:00 AM - 3:00 AM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-gray-400">Sunday</span>
-                <span className="text-[#00ffff]">12:00 PM - 1:00 AM</span>
-              </li>
-            </ul>
+          {/* Right Side - Navigation & Info */}
+          <motion.div 
+            className="space-y-12"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.4, 0.0, 0.2, 1] }}
+            viewport={{ once: true }}
+          >
+            {/* Navigation */}
+            <div>
+              <motion.h3 
+                className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-6"
+                style={{ letterSpacing: '0.2em' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                SITEMAP
+              </motion.h3>
+              <nav className="space-y-4">
+                {[
+                  { href: '/', label: 'HOME' },
+                  { href: '/gallery', label: 'GALLERY' },
+                  { href: '/pricing', label: 'PRICING' },
+                  { href: '/contact', label: 'CONTACT' },
+                ].map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + (index * 0.1) }}
+                    viewport={{ once: true }}
+                  >
+                    <Link 
+                      href={link.href}
+                      className="block text-xl font-bold uppercase tracking-wide text-black hover:text-gray-600 transition-colors duration-300 group"
+                      style={{
+                        fontFamily: 'var(--font-grotesk), Impact, Arial Black, sans-serif',
+                        letterSpacing: '0.05em',
+                      }}
+                    >
+                      <span className="relative">
+                        {link.label}
+                        <motion.div
+                          className="absolute bottom-0 left-0 h-0.5 bg-gray-600 w-0 group-hover:w-full transition-all duration-300"
+                        />
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <motion.h3 
+                className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-6"
+                style={{ letterSpacing: '0.2em' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                CONNECT
+              </motion.h3>
+              <motion.div 
+                className="flex gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                {[
+                  { icon: Instagram, href: 'https://www.instagram.com/11pmgaming', label: 'Instagram' },
+                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+                  { icon: Globe, href: '#', label: 'Website' },
+                  { icon: Mail, href: 'mailto:info@11pmgaming.com', label: 'Email' },
+                ].map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 hover:text-white transition-all duration-300 group"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.9 + (index * 0.1) }}
+                    viewport={{ once: true }}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-gray-300">
+        <div className="container-custom py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Logo & Copyright */}
+            <motion.div 
+              className="flex items-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Link href="/" className="flex items-center gap-2 group">
+                <motion.div 
+                  className="relative"
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center group-hover:bg-gray-800 transition-colors duration-300">
+                    <Gamepad2 className="h-6 w-6 text-white group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </motion.div>
+                
+                <motion.span 
+                  className="text-2xl font-black tracking-tight"
+                  style={{
+                    fontFamily: 'var(--font-grotesk), Impact, Arial Black, sans-serif',
+                    letterSpacing: '0.02em',
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="text-black group-hover:text-gray-600 transition-colors duration-300">11</span>
+                  <span className="text-gray-800 group-hover:text-black transition-colors duration-300">PM</span>
+                </motion.span>
+              </Link>
+
+              <motion.p 
+                className="text-sm font-medium text-gray-600 uppercase tracking-wider"
+                style={{ letterSpacing: '0.1em' }}
+              >
+                11 PM GAMING © {currentYear}
+              </motion.p>
+            </motion.div>
+
+            {/* Credits */}
+            <motion.div
+              className="text-right"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <Link 
+                href="#"
+                className="text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors duration-300 uppercase tracking-wider"
+                style={{ letterSpacing: '0.1em' }}
+              >
+                INFOS & CREDITS
+              </Link>
+            </motion.div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-10 mt-10 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} 11 PM Gaming Cafe. All rights reserved.
-          </p>
-        </div>
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 opacity-5">
+        <motion.div
+          className="w-full h-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        >
+          <svg viewBox="0 0 200 200" className="w-full h-full">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2" />
+            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1" />
+            <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
+            <text x="100" y="105" textAnchor="middle" className="text-4xl font-black" fill="currentColor">11PM</text>
+          </svg>
+        </motion.div>
       </div>
     </footer>
   );
